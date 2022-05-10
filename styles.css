@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@500&display=swap");
+:root {
+  --first-color: #eeeeee;
+  --second-color: #00adb5;
+  --third-color: #393e46;
+  --forth-color: #222831;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  /* border: red 1px solid; */
+}
+
+header {
+  width: 250px;
+  height: 100vh;
+  padding: 50px 0px;
+  position: fixed;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--third-color);
+}
+.logo {
+  font-size: xx-large;
+  user-select: none;
+  letter-spacing: 2px;
+  color: var(--first-color);
+}
+.nav-items {
+  height: 60%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--third-color);
+}
+.nav-items .nav-item {
+  width: 100%;
+  max-width: 160px;
+  text-decoration: none;
+  color: var(--second-color);
+  font-weight: bold;
+  padding: 8px 0;
+  margin: 4px 0;
+  text-align: center;
+  border-radius: 18px;
+  transition: 0.6s;
+}
+.nav-items .nav-item:hover {
+  background-color: var(--second-color);
+  color: var(--first-color);
+}
+.menu-icon {
+  display: none;
+  color: var(--first-color);
+  transition: 0.6s;
+}
+.menu-icon:hover {
+  color: var(--second-color);
+}
+.content {
+  background-color: var(--first-color);
+  color: var(--forth-color);
+  margin-left: 250px;
+  padding: 20px;
+}
+@media screen and (min-width: 740px) {
+  .nav-items {
+    transform: none !important;
+  }
+}
+
+/* small screens styles */
+@media screen and (max-width: 740px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 60px;
+    width: 100vw;
+    padding: 0 40px;
+    top: 0;
+  }
+  .nav-items {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateY(-100vh);
+    justify-content: flex-start;
+    z-index: 10;
+  }
+  .menu-icon {
+    display: block;
+  }
+  .nav-items .menu-icon {
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100vw;
+    padding: 0 40px;
+    margin-bottom: 30px;
+  }
+  .content {
+    margin-top: 60px;
+    margin-left: 0;
+  }
+}
