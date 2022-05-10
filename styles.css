@@ -15,6 +15,12 @@
   font-family: "Montserrat", sans-serif;
   /* border: red 1px solid; */
 }
+*:focus {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
 
 header {
   width: 250px;
@@ -55,9 +61,13 @@ header {
   border-radius: 18px;
   transition: 0.6s;
 }
-.nav-items .nav-item:hover {
+.nav-item:hover {
   background-color: var(--second-color);
   color: var(--first-color);
+}
+.active-link {
+  background-color: var(--second-color);
+  color: var(--first-color) !important;
 }
 .menu-icon {
   display: none;
@@ -77,6 +87,9 @@ header {
   .nav-items {
     transform: none !important;
   }
+  .nav-item{
+    opacity: 1 !important;
+  }
 }
 
 /* small screens styles */
@@ -86,7 +99,7 @@ header {
     justify-content: space-between;
     height: 60px;
     width: 100vw;
-    padding: 0 40px;
+    padding: 0 20px;
     top: 0;
   }
   .nav-items {
@@ -96,11 +109,17 @@ header {
     top: 0;
     left: 0;
     transform: translateY(-100vh);
+    transition: transform 0.5s;
     justify-content: flex-start;
     z-index: 10;
   }
   .menu-icon {
     display: block;
+  }
+  .nav-item {
+    opacity: 0.0;
+    transition: opacity 0.5s;
+    transition-delay: 0.5s;
   }
   .nav-items .menu-icon {
     height: 60px;
@@ -108,7 +127,7 @@ header {
     justify-content: flex-end;
     align-items: center;
     width: 100vw;
-    padding: 0 40px;
+    padding: 0 20px;
     margin-bottom: 30px;
   }
   .content {
