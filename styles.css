@@ -83,6 +83,7 @@ header {
   margin-left: 250px;
   padding: 20px;
 }
+
 @media screen and (min-width: 740px) {
   .nav-items {
     transform: none !important;
@@ -134,4 +135,16 @@ header {
     margin-top: 60px;
     margin-left: 0;
   }
+}
+
+/*  */
+::-webkit-scrollbar {
+  width: 3px;
+  background: transparent;
+}
+::-webkit-scrollbar-track {
+  background: var(--first-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--second-color);
 }
