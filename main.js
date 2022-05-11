@@ -1,4 +1,6 @@
 //
+var links = document.querySelectorAll(".nav-item");
+//
 var open_button = document.querySelector("#open-link");
 open_button.addEventListener("click", function () {
   open_menu();
@@ -12,20 +14,24 @@ close_button.addEventListener("click", function () {
 function open_menu() {
   document.querySelector(".nav-items").classList.remove("close");
   document.querySelector(".nav-items").classList.add("open");
-  links.forEach(function (link) {
-    link.style.cssText = "opacity: 1 ; transition: opacity 0.5s; transition-delay: 0.3s;";
-  });
+  setTimeout(function () {
+    links.forEach(function (link) {
+      link.style.opacity = "1";
+    });
+  }, 500);
 }
 
 function close_menu() {
   document.querySelector(".nav-items").classList.remove("open");
   document.querySelector(".nav-items").classList.add("close");
-  links.forEach(function (link) {
-    link.style.cssText = "opacity: 0 ";
-  });
+  setTimeout(function () {
+    links.forEach(function (link) {
+      link.style.opacity = "0";
+    });
+  }, 500);
 }
 //
-var links = document.querySelectorAll(".nav-item");
+
 links.forEach(function (link) {
   link.addEventListener("click", function () {
     remove_active();

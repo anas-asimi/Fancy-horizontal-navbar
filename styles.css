@@ -66,13 +66,13 @@ header {
   padding: 8px 0;
   margin: 2px 0;
   text-align: center;
+  transition: background-color 0.5s, color 0.5s , width 0.5s, opacity 1s;
 }
 .nav-item:hover,
 .active-link {
   background-color: var(--second-color);
   color: var(--first-color);
   width: 120px;
-  transition: 0.5s;
 }
 .fa-arrow-up {
   color: var(--first-color);
@@ -80,7 +80,7 @@ header {
 .fa-arrow-up:hover,
 .fa-bars:hover {
   color: var(--second-color);
-  transition: 0.2s;
+  transition: 0.5s;
 }
 .content {
   background-color: var(--first-color);
