@@ -1,10 +1,13 @@
+/* font */
 @import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@500&display=swap");
+/* coulers */
 :root {
   --first-color: #eeeeee;
   --second-color: #00adb5;
   --third-color: #393e46;
   --forth-color: #222831;
 }
+/* general */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -13,131 +16,10 @@
   text-decoration: none;
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
+  color: black;
   /* border: red 1px solid; */
 }
-*:focus {
-  -webkit-tap-highlight-color: transparent;
-  outline: none;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-}
-
-header {
-  width: 250px;
-  height: 100vh;
-  padding: 50px 0px;
-  position: fixed;
-  left: 0px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  background-color: var(--third-color);
-}
-.logo {
-  font-size: xx-large;
-  user-select: none;
-  letter-spacing: 2px;
-  color: var(--first-color);
-}
-.nav-items {
-  height: 60%;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--third-color);
-}
-.nav-items .nav-item {
-  width: 100%;
-  max-width: 160px;
-  text-decoration: none;
-  color: var(--second-color);
-  font-weight: bold;
-  padding: 8px 0;
-  margin: 4px 0;
-  text-align: center;
-  border-radius: 18px;
-  transition: 0.6s;
-}
-.nav-item:hover {
-  background-color: var(--second-color);
-  color: var(--first-color);
-}
-.active-link {
-  background-color: var(--second-color);
-  color: var(--first-color) !important;
-}
-.menu-icon {
-  display: none;
-  color: var(--first-color);
-  transition: 0.6s;
-}
-.menu-icon:hover {
-  color: var(--second-color);
-}
-.content {
-  background-color: var(--first-color);
-  color: var(--forth-color);
-  margin-left: 250px;
-  padding: 20px;
-}
-
-@media screen and (min-width: 740px) {
-  .nav-items {
-    transform: none !important;
-  }
-  .nav-item{
-    opacity: 1 !important;
-  }
-}
-
-/* small screens styles */
-@media screen and (max-width: 740px) {
-  header {
-    flex-direction: row;
-    justify-content: space-between;
-    height: 60px;
-    width: 100vw;
-    padding: 0 20px;
-    top: 0;
-  }
-  .nav-items {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    transform: translateY(-100vh);
-    transition: transform 0.5s;
-    justify-content: flex-start;
-    z-index: 10;
-  }
-  .menu-icon {
-    display: block;
-  }
-  .nav-item {
-    opacity: 0.0;
-    transition: opacity 0.5s;
-    transition-delay: 0.5s;
-  }
-  .nav-items .menu-icon {
-    height: 60px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100vw;
-    padding: 0 20px;
-    margin-bottom: 30px;
-  }
-  .content {
-    margin-top: 60px;
-    margin-left: 0;
-  }
-}
-
-/*  */
+/* scrooll bar styles */
 ::-webkit-scrollbar {
   width: 3px;
   background: transparent;
@@ -147,4 +29,204 @@ header {
 }
 ::-webkit-scrollbar-thumb {
   background: var(--second-color);
+}
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+
+html {
+}
+body {
+}
+header {
+  background-color: var(--third-color);
+}
+.logo {
+  color: var(--first-color);
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+.nav-items {
+  background-color: var(--third-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fa-bars {
+  color: var(--first-color);
+}
+.nav-item {
+  width: 100px;
+  color: var(--second-color);
+  letter-spacing: 1px;
+  border-radius: 200px;
+  padding: 8px 0;
+  margin: 2px 0;
+  text-align: center;
+}
+.nav-item:hover,
+.active-link {
+  background-color: var(--second-color);
+  color: var(--first-color);
+  width: 120px;
+  transition: 0.5s;
+}
+.fa-arrow-up {
+  color: var(--first-color);
+}
+.fa-arrow-up:hover,
+.fa-bars:hover {
+  color: var(--second-color);
+  transition: 0.2s;
+}
+.content {
+  background-color: var(--first-color);
+}
+.section {
+}
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/* big screens styles */
+@media screen and (min-width: 740px) {
+  html {
+    height: 100%;
+    width: 100%;
+  }
+  body {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  header {
+    height: 100%;
+    min-width: 250px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .logo {
+  }
+  .nav-items {
+  }
+  .fa-bars {
+  }
+  .nav-item {
+  opacity: 1 !important;
+  }
+  .nav-item:hover,
+  .active-link {
+  }
+  .fa-arrow-up {
+  }
+  .menu-open,
+  .menu-close {
+    display: none;
+  }
+  .hehe {
+    visibility: hidden;
+  }
+  .content {
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+  }
+  section {    
+  width: 100%;
+  height: 100%;
+  }
+}
+
+/* small screens styles */
+@media screen and (max-width: 740px) {
+  html {
+    height: 100%;
+    width: 100%;
+  }
+  body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  header {
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 10;
+
+  }
+  .logo {
+  }
+  .nav-items {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: -100%;
+    position: fixed;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+  }
+  .fa-bars {
+  }
+  .nav-item {
+    margin: 10px 0;
+    opacity: 0;
+  }
+  .nav-item:hover,
+  .active-link {
+  }
+  .fa-arrow-up {
+  }
+  .menu-open{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px;
+    margin-bottom: calc(10vh);
+  }
+  .hehe{
+    visibility: hidden;
+  }
+  .content {
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+
+  }
+  section {
+    height: 500px;
+  }
+}
+.open{
+  animation-name: menu-open ;
+}
+.close{
+  animation-name: menu-close ;
+}
+@keyframes menu-open {
+  from {transform: translateY(0%) ;}
+  to {transform: translateY(100%) ;}
+}
+@keyframes menu-close {
+  from {transform: translateY(100%) ;}
+  to {transform: translateY(0%) ;}
 }
